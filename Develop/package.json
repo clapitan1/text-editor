@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "start:dev": "concurrently",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "build": "webpack",
+    "install": "echo",
+    "client": "echo"
   },
   "keywords": [],
   "author": "",
