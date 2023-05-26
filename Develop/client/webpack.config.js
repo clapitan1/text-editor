@@ -18,7 +18,29 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin(),
+      new WebpackPwaManifest({
+        name: 'JATE',
+        short_name: 'JATE',
+        description: 'My awesome Progressive Web App!',
+        background_color: '#ffffff',
+        crossorigin: null, //can be null, use-credentials or anonymous
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+          },
+          // {
+          //   src: path.resolve('src/assets/large-icon.png'),
+          //   size: '1024x1024' // you can also use the specifications pattern
+          // },
+          // {
+          //   src: path.resolve('src/assets/maskable-icon.png'),
+          //   size: '1024x1024',
+          //   purpose: 'maskable'
+          // }
+        ]
+      })
     ],
 
     module: {
